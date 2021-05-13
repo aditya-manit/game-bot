@@ -1,0 +1,146 @@
+﻿{
+  "inkVersion": 19,
+  "root": [
+    [
+      "^It was our first date and we hadn't made dinner plans.",
+      "\n",
+      {
+        "->": "Pizza_Choices"
+      },
+      [
+        "done",
+        {
+          "#f": 5,
+          "#n": "g-0"
+        }
+      ],
+      null
+    ],
+    "done",
+    {
+      "Pizza_Choices": [
+        [
+          "^She turned to me. \"What should we eat?\"",
+          "\n",
+          "ev",
+          "str",
+          "^Pizza?",
+          "/str",
+          "/ev",
+          {
+            "*": ".^.c-0",
+            "flg": 4
+          },
+          "ev",
+          "str",
+          "^Sushi?",
+          "/str",
+          "/ev",
+          {
+            "*": ".^.c-1",
+            "flg": 4
+          },
+          "ev",
+          "str",
+          "^Salad?",
+          "/str",
+          "/ev",
+          {
+            "*": ".^.c-2",
+            "flg": 4
+          },
+          "ev",
+          "str",
+          "^Nothing?",
+          "/str",
+          "/ev",
+          {
+            "*": ".^.c-3",
+            "flg": 4
+          },
+          {
+            "c-0": [
+              "\n",
+              {
+                "->": "Pizza"
+              },
+              {
+                "#f": 5
+              }
+            ],
+            "c-1": [
+              "\n",
+              {
+                "->": "Sushi"
+              },
+              {
+                "#f": 5
+              }
+            ],
+            "c-2": [
+              "\n",
+              {
+                "->": "Salad"
+              },
+              {
+                "#f": 5
+              }
+            ],
+            "c-3": [
+              "\n",
+              {
+                "->": "Nothing"
+              },
+              {
+                "#f": 5
+              }
+            ]
+          }
+        ],
+        {
+          "#f": 1
+        }
+      ],
+      "Pizza": [
+        "^She shook her head. \"I don't like pizza.\"",
+        "\n",
+        {
+          "->": "Pizza_Choices"
+        },
+        {
+          "#f": 1
+        }
+      ],
+      "Sushi": [
+        "^\"Sushi sounds good!\"",
+        "\n",
+        "done",
+        {
+          "#f": 1
+        }
+      ],
+      "Salad": [
+        "^\"Not a salad\"",
+        "\n",
+        {
+          "->": "Pizza_Choices"
+        },
+        {
+          "#f": 1
+        }
+      ],
+      "Nothing": [
+        "^\"We have to eat something!\"",
+        "\n",
+        {
+          "->": "Pizza_Choices"
+        },
+        {
+          "#f": 1
+        }
+      ],
+      "#f": 1
+    }
+  ],
+  "listDefs": {}
+}
